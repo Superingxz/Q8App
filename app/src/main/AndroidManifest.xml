@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.xologood.q8pad">
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:resizeable="true"
+        android:smallScreens="true" />
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+
+    <application
+        android:name=".Qpadapplication"
+        android:allowBackup="true"
+        android:icon="@drawable/icon"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <meta-data
+            android:name="channel"
+            android:value="${CHANNEL_VALUE}" />
+
+        <!-- 使用bugly平台自动更新 -->
+        <activity
+            android:name="com.tencent.bugly.beta.ui.BetaActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|locale"
+            android:theme="@android:style/Theme.Translucent" />
+
+        <!-- 自动更新 -->
+        <service android:name=".service.UpdateService" />
+
+        <!-- 登录 -->
+        <activity android:name=".ui.login.LoginInActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!-- 系统设置 -->
+        <activity android:name=".ui.login.SystemSettingActicity"
+            android:windowSoftInputMode="adjustPan|stateHidden"/>
+
+        <!-- 主页 -->
+        <activity
+            android:name=".ui.MainActivity"
+            android:theme="@style/MainActivityStyle" />
+
+        <!-- 入库 -->
+        <activity android:name=".ui.inlibrary.InLibraryActivity" />
+        <!-- 新建订单入库 -->
+        <activity
+            android:name=".ui.inlibrary.newininvoice.NewInInvoiceActivity"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <!-- 已有订单入库 -->
+        <activity
+            android:name=".ui.inlibrary.oldininvoice.OldInInvoiceActivity"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <!-- 入库扫码 -->
+        <activity
+            android:name=".ui.scan.ScanActivity"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <!-- 入库结束 -->
+
+
+        <!-- 出入库明细页面 -->
+        <activity
+            android:name=".ui.invoicingdetail.InvoicingDetailActivity"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+
+        <!-- 出库 -->
+        <activity
+            android:name=".ui.outlibrary.OutLibraryActivity"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <!-- 新建订单出库 -->
+        <activity
+            android:name=".ui.outlibrary.newoutinvoice.NewOutInvoiceActivity"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <!-- 已有订单出库 -->
+        <activity
+            android:name=".ui.outlibrary.oldoutinvoice.OldOutInvoiceActivity"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+
+        <!-- 相机 -->
+        <activity android:name="com.xologood.zxing.activity.CaptureActivity" />
+        <!-- 出库结束 -->
+
+
+        <!-- 快捷出库 -->
+        <activity
+            android:name=".ui.fastoutlibrary.FastOutLibrary.FastOutLibraryActivity"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <!-- 快捷出库新建订单 -->
+        <activity
+            android:name=".ui.fastoutlibrary.newfastoutinvoice.NewFastOutInvoiceActivity"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <!-- 快捷出库结束 -->
+
+
+        <!-- 替换条码 -->
+        <activity
+            android:name=".ui.replace.ReplaceActivity"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity android:name=".ui.inlibrary.testActivity" />
+
+        <!-- 作废条码 -->
+        <activity
+            android:name=".ui.abolishcode.AbolishCodeActivity"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <!-- 签收人信息 -->
+        <activity android:name=".ui.FirstUserDetail" />
+
+        <!-- 退货 -->
+        <activity
+            android:name=".ui.returngoods.ReturnGoodsActivity"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+
+        <!-- 物流查询 -->
+        <activity
+            android:name=".ui.Logistics.LogisticsActivity"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+
+        <activity android:name=".test.TestActivity" /><!-- ATTENTION: This was auto-generated to add Google Play services to your project for
+     App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+    </application>
+
+</manifest>

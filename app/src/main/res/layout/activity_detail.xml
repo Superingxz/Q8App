@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aaron="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.xologood.q8pad.view.TitleView
+        android:id="@+id/title_view"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="5dp"
+            android:orientation="vertical"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp">
+
+            <com.mview.medittext.view.QpadEditText
+                android:id="@+id/InvId"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/common_layout_middle"
+                android:background="@drawable/btn_layout_off_bg"
+                android:paddingLeft="@dimen/common_padding5"
+                android:paddingRight="@dimen/common_padding5"
+                aaron:fieldEnabled="true"
+                aaron:fieldTitle="单号："
+                aaron:fieldType="String" />
+
+            <com.mview.medittext.view.QpadEditText
+                android:id="@+id/ComName"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/common_layout_middle"
+                android:background="@drawable/btn_layout_off_bg"
+                android:paddingLeft="@dimen/common_padding5"
+                android:paddingRight="@dimen/common_padding5"
+                aaron:fieldEnabled="true"
+                aaron:fieldTitle="开单机构："
+                aaron:fieldType="String" />
+
+            <com.mview.medittext.view.QpadEditText
+                android:id="@+id/receivingComName"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/common_layout_middle"
+                android:background="@drawable/btn_layout_off_bg"
+                android:paddingLeft="@dimen/common_padding5"
+                android:paddingRight="@dimen/common_padding5"
+                aaron:fieldEnabled="true"
+                aaron:fieldTitle="签收机构："
+                aaron:fieldType="String" />
+
+            <com.mview.medittext.view.QpadEditText
+                android:id="@+id/stateName"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/common_layout_middle"
+                android:background="@drawable/btn_layout_off_bg"
+                android:paddingLeft="@dimen/common_padding5"
+                android:paddingRight="@dimen/common_padding5"
+                aaron:fieldEnabled="true"
+                aaron:fieldTitle="单据状态："
+                aaron:fieldType="String" />
+
+            <com.mview.medittext.view.QpadEditText
+                android:id="@+id/InvByName"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/common_layout_middle"
+                android:background="@drawable/btn_layout_off_bg"
+                android:paddingLeft="@dimen/common_padding5"
+                android:paddingRight="@dimen/common_padding5"
+                aaron:fieldEnabled="true"
+                aaron:fieldTitle="开单据人："
+                aaron:fieldType="String" />
+
+            <com.mview.medittext.view.QpadEditText
+                android:id="@+id/invTime"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/common_layout_middle"
+                android:background="@drawable/btn_layout_off_bg"
+                android:paddingLeft="@dimen/common_padding5"
+                android:paddingRight="@dimen/common_padding5"
+                aaron:fieldEnabled="true"
+                aaron:fieldTitle="开单时间："
+                aaron:fieldType="String" />
+
+            <LinearLayout
+                android:id="@+id/orderForm"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <com.xologood.q8pad.view.ScrollListView
+                    android:id="@+id/lv"
+                    android:background="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/commit"
+                style="@style/ButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="确定完成" />
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>
